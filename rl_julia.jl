@@ -1,12 +1,12 @@
-# Dados de treinamento
+### trainig 
 x = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
 y = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
 
-# Inicialização dos pesos
+### weights
 w = rand()
 b = rand()
 
-# Função de perda (MSE)
+### mse fun
 function mean_squared_error(x, y, w, b)
     N = length(x)
     error = 0.0
@@ -16,15 +16,15 @@ function mean_squared_error(x, y, w, b)
     return error / N
 end
 
-# Taxa de aprendizagem
+### learning rate
 α = 0.01
 
-# Número de épocas
+### epochs
 epochs = 100
 
-# Loop de treinamento
+### training loop
 for i in 1:epochs
-    # Calcular gradientes
+    ### calc grades
     dw = 0.0
     db = 0.0
     N = length(x)
@@ -35,14 +35,14 @@ for i in 1:epochs
     dw /= N
     db /= N
 
-    # Atualizar pesos
+    ### refresh weights
     w -= α * dw
     b -= α * db
 
-    # Calcular erro
+    ### error calc
     error = mean_squared_error(x, y, w, b)
 
-    # Imprimir erro a cada 10 épocas
+    ### print error each 10 epoch
     if i % 10 == 0
         println("Época: $(i) | Erro: $(error)")
     end
