@@ -17,7 +17,7 @@ function mean_squared_error(x, y, w, b)
 end
 
 ### learning rate
-α = 0.01
+a = 0.01
 
 ### epochs
 epochs = 100
@@ -36,8 +36,8 @@ for i in 1:epochs
     db /= N
 
     ### refresh weights
-    w -= α * dw
-    b -= α * db
+    w -= a * dw
+    b -= a * db
 
     ### error calc
     error = mean_squared_error(x, y, w, b)
